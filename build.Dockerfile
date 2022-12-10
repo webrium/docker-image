@@ -4,7 +4,7 @@ ARG DEBIAN_FRONTEND=noninteractive
 
 RUN apt-get update -y
 RUN apt-get upgrade -y
-RUN apt-get install -y php-fpm php-cli php-mysql composer nginx
+RUN apt-get install -y php-fpm php-cli php-mysql php-gd composer nginx
 
 COPY ./config/nginx.conf /etc/nginx/
 COPY ./config/default.conf /etc/nginx/conf.d/
