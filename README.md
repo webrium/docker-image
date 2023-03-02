@@ -21,7 +21,7 @@ docker compose up -d
 
 ### Available tags:
 
-  ``nitrocc/webrium:php8.2``<br>
+  ``nitrocc/webrium:php8.2``  (is the default) <br>
   ``nitrocc/webrium:php8.1``<br>
   ``nitrocc/webrium:php7.4``
   
