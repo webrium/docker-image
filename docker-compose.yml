@@ -2,7 +2,10 @@ version: "3.8"
 
 services:
  web:
-  image: nitrocc/webrium:php8.1
+  image: nitrocc/webrium:php8.2
+  build:
+   dockerfile: ./Dockerfile.php8.2
+   context: .
   volumes:
    - ./src/:/var/www/html/
    - vendor:/var/www/html/vendor

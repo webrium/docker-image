@@ -1,0 +1,16 @@
+FROM nitrocc/webrium:php8.2
+
+ARG DEBIAN_FRONTEND=noninteractive
+
+COPY ./config/nginx.conf /etc/nginx/
+COPY ./config/default.conf /etc/nginx/conf.d/
+COPY ./config/php/php.ini /etc/php/8.2/fpm/
+COPY ./config/php/www.conf /etc/php/8.2/fpm/pool.d/
+
+COPY ./src/ /var/www/html/
+WORKDIR /var/www/html/
+RUN composer update
+
+RUN chown -R www-data:www-data /var/www/html
+
+CMD php-fpm8.2 && nginx -g "daemon off;"
