@@ -6,10 +6,12 @@ RUN apt-get update -y
 RUN apt-get upgrade -y
 RUN apt install lsb-release ca-certificates apt-transport-https software-properties-common -y
 RUN add-apt-repository ppa:ondrej/php
+RUN curl -fsSL https://deb.nodesource.com/setup_18.x | bash
 RUN apt-get update -y
 
 RUN apt-get install -y curl zip unzip php8.2-fpm php8.2-cli php8.2-mysql php8.2-gd php8.2-curl nginx
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+RUN apt-get install -y nodejs git
 
 COPY ./config/nginx.conf /etc/nginx/
 COPY ./config/default.conf /etc/nginx/conf.d/
