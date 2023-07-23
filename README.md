@@ -31,6 +31,6 @@ docker compose up -d
   
   
  ### Default ports:
-  - http://localhost:8080 => Access to the site page
+  - http://localhost:8080 => Access to the site
   - http://localhost:8081 => Access to the phpMyAdmin
 
