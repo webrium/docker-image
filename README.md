@@ -91,3 +91,13 @@ server {
 }
 
 ```
+
+
+### For custom domain for phpmyadmin in docker-compose.yml
+
+in to the environment
+```
+   - UPLOAD_LIMIT=60M
+   - PMA_HOST=db
+   - PMA_ABSOLUTE_URI=https://phpmyadmin/phpmyadmin/
+```
