@@ -67,7 +67,7 @@ server{
                 gzip_static on;
         }
 
-        location ^~ /datamanage/ {
+        location ^~ /phpmyadmin/ {
                 proxy_pass http://phpmyadmin/;
                 absolute_redirect off;
         }
