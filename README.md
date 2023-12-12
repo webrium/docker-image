@@ -34,3 +34,43 @@ docker compose up -d
   - http://localhost:8080 => Access to the site
   - http://localhost:8081 => Access to the phpMyAdmin
 
+
+## Suggested web server configuration
+
+default.conf:
+```NGINX
+
+map $http_x_forwarded_proto $https_flag {
+    default off;
+    https on;
+}
+
+server{
+        listen 80;
+        root /var/www/html/public;
+        index index.html index.php;
+        server_name localhost;
+
+        location ~ \.php$ {
+                try_files $uri =404;
+                fastcgi_split_path_info ^(.+\.php)(/.+)$;
+                fastcgi_param HTTPS $https_flag;
+                fastcgi_pass 127.0.0.1:9000;
+                fastcgi_index index.php;
+                include fastcgi_params;
+                fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+                fastcgi_param PATH_INFO $fastcgi_path_info;
+        }
+
+        location / {
+                try_files $uri $uri/ /index.php?$query_string;
+                gzip_static on;
+        }
+
+        location ^~ /datamanage/ {
+                proxy_pass http://phpmyadmin/;
+                absolute_redirect off;
+        }
+}
+
+```
