@@ -19,7 +19,7 @@ cd webrium
 git clone https://github.com/webrium/webrium src
 cp src/.env.example src/.env
 ```
-Then:
+#### Then:
 
 ```
 docker compose up -d
