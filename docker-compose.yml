@@ -1,6 +1,6 @@
 services:
  web:
-  container_name: server_php8.4
+  container_name: php8.4
   image: nitrocc/webrium:php8.4
   
   build:
@@ -8,6 +8,4 @@ services:
    context: .
   volumes:
    - ./src/:/var/www/html/
-  ports:
-   - 8080:80
 
