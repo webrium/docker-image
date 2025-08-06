@@ -2,11 +2,11 @@
 
 ## About this image
 
-This Docker image is based on the Ubuntu 22.04 distribution and features PHP version 8.2, Nginx web server, and Node.js installed within it. It is designed to serve as a comprehensive hosting platform for various PHP frameworks and websites. The primary focus of this image is to host websites and applications built on the Webrium framework. With its pre-installed components and dependencies, this Docker image streamlines the deployment process of PHP-based applications, enabling users to get started quickly and efficiently.
+This Docker image is based on the Ubuntu 24.04 distribution and features PHP version 8.2, Nginx web server, and BunJs installed within it. It is designed to serve as a comprehensive hosting platform for various PHP frameworks and websites. The primary focus of this image is to host websites and applications built on the Webrium framework. With its pre-installed components and dependencies, this Docker image streamlines the deployment process of PHP-based applications, enabling users to get started quickly and efficiently.
 
 ## Description
 
-This image includes `nginx`, `php`, `mariadb` and `phpmyadmin`
+This image includes `nginx`, `php`
 
 You can easily set up and use your server without the need for configuration, but if needed, you can easily customize nginx and php configurations. The config files are located in the `config` directory
 
@@ -27,12 +27,10 @@ docker compose up -d
 
 ### Available tags:
 
-  ``nitrocc/webrium:php8.2`` 
+  ``nitrocc/webrium:php8.2``
+  ``nitrocc/webrium:php8.4``
   
   
- ### Default ports:
-  - http://localhost:8080 => Access to the site
-  - http://localhost:8081 => Access to the phpMyAdmin
 
 
 ## Suggested web server configuration
@@ -52,6 +50,7 @@ server{
         server_name localhost;
 
         location ~ \.php$ {
+                autoindex on;
                 try_files $uri =404;
                 fastcgi_split_path_info ^(.+\.php)(/.+)$;
                 fastcgi_param HTTPS $https_flag;
