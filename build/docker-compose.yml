@@ -2,9 +2,7 @@ services:
  web:
   image: nitrocc/webrium:php8.4.core
   build:
-   dockerfile: ./Dockerfile.php8.4
+   dockerfile: ./build.Dockerfile
    context: .
   volumes:
    - ./src/:/var/www/html/
-  ports:
-   - 8080:80
