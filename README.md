@@ -2,7 +2,7 @@
 
 ## About this image
 
-This Docker image is based on the Ubuntu 24.04 distribution and features PHP version 8.2, Nginx web server, and BunJs installed within it. It is designed to serve as a comprehensive hosting platform for various PHP frameworks and websites. The primary focus of this image is to host websites and applications built on the Webrium framework. With its pre-installed components and dependencies, this Docker image streamlines the deployment process of PHP-based applications, enabling users to get started quickly and efficiently.
+This Docker image is based on the Ubuntu 24.04 distribution and features PHP version 8.4, Nginx web server, and BunJs installed within it. It is designed to serve as a comprehensive hosting platform for various PHP frameworks and websites. The primary focus of this image is to host websites and applications built on the Webrium framework. With its pre-installed components and dependencies, this Docker image streamlines the deployment process of PHP-based applications, enabling users to get started quickly and efficiently.
 
 ## Description
 
