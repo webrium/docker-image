@@ -6,7 +6,7 @@ This Docker image is based on the Ubuntu 24.04 distribution and features PHP ver
 
 ## Description
 
-This image includes `nginx`, `php`
+This image includes `Nginx`, `PHP`, 'Bun'
 
 You can easily set up and use your server without the need for configuration, but if needed, you can easily customize nginx and php configurations. The config files are located in the `config` directory
 
